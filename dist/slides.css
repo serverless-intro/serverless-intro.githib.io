@@ -1,0 +1,34 @@
+:root {
+    --primary-color: #42affa;
+    --secondary-color: #f92672;
+}
+
+.reveal.sls-intro section .no-border {
+    border: 0;
+}
+
+.reveal.sls-intro section .no-margin {
+    margin: 0;
+}
+
+.reveal.sls-intro section .no-background {
+    background: none;
+    box-shadow: none;
+}
+
+.reveal.sls-intro section .no-text-transform {
+    text-transform: none;
+}
+
+.reveal.sls-intro .primary-color {
+    color: var(--primary-color);
+}
+
+.reveal.sls-intro .secondary-color {
+    color: var(--secondary-color);
+}
+
+/*.reveal.sls-intro code.code {*/
+/*    font-size: 0.75em;*/
+/*    color: var(--secondary-color);*/
+/*}*/
