@@ -28,6 +28,74 @@
     color: var(--secondary-color);
 }
 
+section#why-serverless ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section#why-serverless ul > li {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#why-serverless ul > li p {
+    text-align: center;
+}
+
+section.serverless-services .layer .layer-services {
+    display: flex;
+    flex-direction: row;
+}
+
+section.serverless-services .layer {
+    display: flex;
+    border-bottom: white solid 2px;
+}
+
+section.serverless-services .layer:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+section.serverless-services .layer span.layer-title {
+    width: 25rem;
+    font-size: 2rem;
+    align-self: center;
+    text-align: right;
+    color: var(--primary-color);
+}
+
+section.serverless-services .layer .aws-service:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.aws-service.faded {
+    opacity: .2;
+}
+
+.aws-service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+}
+
+.aws-service img {
+    margin: 0;
+    height: 4rem;
+}
+
+.aws-service span {
+    font-size: 1.25rem;
+}
+
 /*.reveal.sls-intro code.code {*/
 /*    font-size: 0.75em;*/
 /*    color: var(--secondary-color);*/

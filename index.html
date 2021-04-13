@@ -13,6 +13,8 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 		<link rel="stylesheet" href="dist/slides.css">
+
+		<script defer src="dist/fontawesome.js"></script> <!--load all styles -->
 	</head>
 	<body>
 		<div class="reveal sls-intro">
@@ -21,7 +23,226 @@
 					<h1 class="no-text-transform primary-color">Serverless</h1>
 					<h2 class="no-text-transform secondary-color">Hype or the Future?</h2>
 				</section>
-				<section>Slide 2</section>
+				<section id="why-serverless">
+					<h2 class="no-text-transform primary-color">Why serverless?</h2>
+					<ul>
+						<li class="fragment">
+							<p>No servers to provision or manage</p>
+							<span class="fa-stack">
+								<i class="fas fa-server fa-stack-1x"></i>
+								<i class="secondary-color fas fa-ban fa-stack-2x"></i>
+							</span>
+						</li>
+						<li class="fragment"><p>Scales with usage</p><i class="secondary-color fas fa-arrows-alt fa-2x"></i></li>
+						<li class="fragment"><p>Pay for value</p><i class="secondary-color fas fa-money-bill-alt fa-2x"></i></li>
+						<li class="fragment"><p>Availability and fault tolerance built in</p><i class="secondary-color fas fa-layer-group fa-2x"></i></li>
+					</ul>
+				</section>
+				<section>
+					<h2 class="no-text-transform secondary-color">Sounds promising, doesn't it?</h2>
+				</section>
+				<section>
+					<p>So let's build a typical web application:</p>
+					<img alt="web app" class="no-margin" src="dist/img/web-app-arch.svg">
+					<p>... and see if the promises come true <i class="secondary-color fas fa-smile-wink"></i></p>
+				</section>
+				<section>
+					<h2 class="no-text-transform primary-color">How to build a <span class="secondary-color">serverless</span> web application on&nbsp;<i class="secondary-color fab fa-aws"></i>&nbsp;?</h2>
+					<p><i class="secondary-color fab fa-aws"></i>&nbsp;recommends the <a target="_blank" href="https://aws.amazon.com/architecture/well-architected">Well-Architected Framework</a> which <q cite="https://aws.amazon.com/architecture/well-architected#AWS_Well-Architected_and_the_Five_Pillars">describes the key concepts, design principles, and architectural best practices for designing and running workloads in the cloud.</q></p>
+					<p>What is more, the <a target="_blank" href="https://aws.amazon.com/architecture/well-architected">Well-Architected Framework</a> offers the <a href="https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html" target="_blank">Serverless Applications Lens</a> which extend the Framework specifically to <span class="secondary-color">serverless</span>.</p>
+				</section>
+				<section data-transition="slide-in fade-out" class="serverless-services">
+					<div class="layer">
+						<span class="layer-title">Compute</span>
+						<div class="layer-services">
+							<a target="_blank" href="https://aws.amazon.com/lambda/" class="aws-service">
+								<img alt="AWS Lambda" src="dist/img/aws/Arch_AWS-Lambda_16.svg">
+								<span>Lambda</span>
+							</a>
+							<div class="aws-service">
+								<img alt="API Gateway" src="dist/img/aws/Arch_Amazon-API-Gateway_16.svg">
+								<span>API&nbsp;Gateway</span>
+							</div>
+							<div class="aws-service">
+								<img alt="Step Functions" src="dist/img/aws/Arch_AWS-Step-Functions_16.svg">
+								<span>Step&nbsp;Functions</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Data</span>
+						<div class="layer-services">
+							<a target="_blank"  href="https://aws.amazon.com/dynamodb" class="aws-service">
+								<img alt="DynamoDB" src="dist/img/aws/Arch_Amazon-DynamoDB_16.svg">
+								<span>DynamoDB</span>
+							</a>
+							<div class="aws-service">
+								<img alt="S3" src="dist/img/aws/Arch_Amazon-Simple-Storage-Service_16.svg">
+								<span>S3</span>
+							</div>
+							<div class="aws-service">
+								<img alt="AppSync" src="dist/img/aws/Arch_AWS-AppSync_16.svg">
+								<span>AppSync</span>
+							</div>
+							<div class="aws-service">
+								<img alt="Elasticsearch" src="dist/img/aws/Arch_Amazon-Elasticsearch-Service_16.svg">
+								<span>Elasticsearch</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">User Management and Identity</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="Cognito" src="dist/img/aws/Arch_Amazon-Cognito_16.svg">
+								<span>Cognito</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Edge</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="CloudFront" src="dist/img/aws/Arch_Amazon-CloudFront_16.svg">
+								<span>CloudFront</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Systems Monitoring and Deployment</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="CloudWatch" src="dist/img/aws/Arch_Amazon-CloudWatch_16.svg">
+								<span>CloudWatch</span>
+							</div>
+							<div class="aws-service">
+								<img alt="X-Ray" src="dist/img/aws/Arch_AWS-X-Ray_16.svg">
+								<span>X-Ray</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Messaging and Streaming</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="SNS" src="dist/img/aws/Arch_Amazon-Simple-Notification-Service_16.svg">
+								<span>SNS</span>
+							</div>
+							<div class="aws-service">
+								<img alt="Kinesis" src="dist/img/aws/Arch_Amazon-Kinesis_16.svg">
+								<span>Kinesis</span>
+							</div>
+							<div class="aws-service">
+								<img alt="Kinesis Data Analytics" src="dist/img/aws/Arch_Amazon-Kinesis-Data-Analytics_16.svg">
+								<span>Data Analytics</span>
+							</div>
+							<div class="aws-service">
+								<img alt="Kinesis Data Analytics" src="dist/img/aws/Arch_Amazon-Kinesis-Firehose_16.svg">
+								<span>Data Firehose</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-transition="fade-in slide-out" class="serverless-services">
+					<div class="layer">
+						<span class="layer-title">Compute</span>
+						<div class="layer-services">
+							<a target="_blank" href="https://aws.amazon.com/lambda/" class="aws-service">
+								<img alt="AWS Lambda" src="dist/img/aws/Arch_AWS-Lambda_16.svg">
+								<span>Lambda</span>
+							</a>
+							<div class="aws-service">
+								<img alt="API Gateway" src="dist/img/aws/Arch_Amazon-API-Gateway_16.svg">
+								<span>API&nbsp;Gateway</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="Step Functions" src="dist/img/aws/Arch_AWS-Step-Functions_16.svg">
+								<span>Step&nbsp;Functions</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Data</span>
+						<div class="layer-services">
+							<a target="_blank"  href="https://aws.amazon.com/dynamodb" class="aws-service">
+								<img alt="DynamoDB" src="dist/img/aws/Arch_Amazon-DynamoDB_16.svg">
+								<span>DynamoDB</span>
+							</a>
+							<div class="aws-service">
+								<img alt="S3" src="dist/img/aws/Arch_Amazon-Simple-Storage-Service_16.svg">
+								<span>S3</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="AppSync" src="dist/img/aws/Arch_AWS-AppSync_16.svg">
+								<span>AppSync</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="Elasticsearch" src="dist/img/aws/Arch_Amazon-Elasticsearch-Service_16.svg">
+								<span>Elasticsearch</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">User Management and Identity</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="Cognito" src="dist/img/aws/Arch_Amazon-Cognito_16.svg">
+								<span>Cognito</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Edge</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="CloudFront" src="dist/img/aws/Arch_Amazon-CloudFront_16.svg">
+								<span>CloudFront</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Systems Monitoring and Deployment</span>
+						<div class="layer-services">
+							<div class="aws-service">
+								<img alt="CloudWatch" src="dist/img/aws/Arch_Amazon-CloudWatch_16.svg">
+								<span>CloudWatch</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="X-Ray" src="dist/img/aws/Arch_AWS-X-Ray_16.svg">
+								<span>X-Ray</span>
+							</div>
+						</div>
+					</div>
+					<div class="layer">
+						<span class="layer-title">Messaging and Streaming</span>
+						<div class="layer-services">
+							<div class="aws-service faded">
+								<img alt="SNS" src="dist/img/aws/Arch_Amazon-Simple-Notification-Service_16.svg">
+								<span>SNS</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="Kinesis" src="dist/img/aws/Arch_Amazon-Kinesis_16.svg">
+								<span>Kinesis</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="Kinesis Data Analytics" src="dist/img/aws/Arch_Amazon-Kinesis-Data-Analytics_16.svg">
+								<span>Data Analytics</span>
+							</div>
+							<div class="aws-service faded">
+								<img alt="Kinesis Data Analytics" src="dist/img/aws/Arch_Amazon-Kinesis-Firehose_16.svg">
+								<span>Data Firehose</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-transition="slide-in fade-out">
+					<h4 class="no-text-transform secondary-color">Our typical web application...</h4>
+					<img alt="web app" class="no-margin" src="dist/img/web-app-arch.svg">
+				</section>
+				<section data-transition="fade-in slide-out">
+					<h4 class="no-text-transform secondary-color">...will then look like this:</h4>
+					<img alt="web app" class="no-margin" src="dist/img/web-app-sls-arch.svg">
+				</section>
 			</div>
 		</div>
 
