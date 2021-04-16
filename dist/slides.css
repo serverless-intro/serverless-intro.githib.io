@@ -16,6 +16,11 @@
     box-shadow: none;
 }
 
+.reveal.sls-intro section ul.no-margin-nor-bullet-points {
+    margin: 0;
+    list-style: none;
+}
+
 .reveal.sls-intro section .no-text-transform {
     text-transform: none;
 }
@@ -94,6 +99,55 @@ section.serverless-services .layer .aws-service:not(:last-child) {
 
 .aws-service span {
     font-size: 1.25rem;
+}
+
+section.lambda-hello div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.lambda-hello div :not(:first-child) {
+    margin-left: 1rem;
+}
+
+section#aws-tooling ul :not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+section#aws-tooling ul li a {
+    display: flex;
+    align-content: center;
+}
+
+section#aws-tooling ul li img {
+    height: 4rem;
+    margin: 0 1rem 0 0;
+}
+
+section#serverless-frameworks img {
+    height: 5rem;
+}
+
+section#serverless-frameworks ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section#serverless-frameworks ul :not(:last-child) {
+    margin-right: 1rem;
+}
+
+section#sls-setup li.iam-user div {
+    display: flex;
+    align-content: center;
+}
+
+section#sls-setup ol :not(:last-child) {
+    margin-bottom: .5rem;
 }
 
 /*.reveal.sls-intro code.code {*/
