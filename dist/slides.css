@@ -150,6 +150,29 @@ section#sls-setup ol :not(:last-child) {
     margin-bottom: .5rem;
 }
 
+section#serverless-hype div.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section#serverless-hype div.main ul {
+    font-size: 2rem;
+    margin-left: 1rem;
+    text-align: right;
+}
+
+section#serverless-definitions p {
+    font-size: 2rem;
+}
+
+section#serverless-pros div {
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+}
+
 /*.reveal.sls-intro code.code {*/
 /*    font-size: 0.75em;*/
 /*    color: var(--secondary-color);*/
